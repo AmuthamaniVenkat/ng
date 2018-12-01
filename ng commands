@@ -1,0 +1,119 @@
+ng:
+The prefix ng stands for "Angular;" all of the built-in directives that ship with Angular use that prefix.
+Similarly, it is recommended that you do not use the ng prefix on your own directives in order to avoid
+possible name collisions in future versions of Angular
+
+Available Commands:
+  add Adds support for an external library to your project.
+  build (b) Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.
+  config Retrieves or sets Angular configuration values in the angular.json file for the workspace.
+  doc (d) Opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.
+  e2e (e) Builds and serves an Angular app, then runs end-to-end tests using Protractor.
+  generate (g) Generates and/or modifies files based on a schematic.
+  help Lists available commands and their short descriptions.
+  lint (l) Runs linting tools on Angular app code in a given project folder.
+  new (n) Creates a new workspace and an initial Angular app.
+  run Runs an Architect target with an optional custom builder configuration defined in your project.
+  serve (s) Builds and serves your app, rebuilding on file changes.
+  test (t) Runs unit tests in a project.
+  update Updates your application and its dependencies. See https://update.angular.io/
+  version (v) Outputs Angular CLI version.
+  xi18n Extracts i18n messages from source code.
+
+For more detailed help run "ng [command name] --help"
+
+
+Getting Started:
+To install the Angular CLI:
+
+npm install -g @angular/cli
+
+Generating and serving an Angular project via a development server Create and run a new project:
+
+ng new my-project
+cd my-project
+ng serve
+
+Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+Bundling:
+All builds make use of bundling, and using the --prod flag in ng build --prod or 
+ng serve --prod will also make use of uglifying and tree-shaking functionality.
+
+Running unit tests
+ng test
+Tests will execute after a build is executed via Karma, 
+and it will automatically watch your files for changes. You can run tests a single time via --watch=false or --single-run.
+
+Running end-to-end tests:
+ng e2e
+Before running the tests make sure you are serving the app via ng serve. End-to-end tests are run via Protractor.
+
+
+Additional Commands
+ng new
+ng serve
+ng generate
+ng lint
+ng test
+ng e2e
+ng build
+ng get/ng set
+ng doc
+ng xi18n
+ng update
+
+Angular CLI Workspace Schema
+Angular CLI workspace file (angular.json) schema
+
+Properties:
+
+
+version (integer): File format version. This is currently "1".
+
+newProjectRoot (string): Path where new projects will be created.
+
+defaultProject (string): Default project name used in commands.
+
+cli: Workspace configuration options for Angular CLI.
+
+defaultCollection (string): The default schematics collection to use.
+packageManager (string): Specify which package manager tool to use.
+warnings (object): Warning configuration.
+versionMismatch (boolean): Show a warning when the global version is newer than the local one.
+typescriptMismatch (boolean): The name of the project.
+schematics (object): Workspace configuration options for Schematics.
+
+schematic-package:schematic-name (object): Object containing options for this schematic. JSON Schema for default schematics:
+@schematics/angular:component
+@schematics/angular:directive
+@schematics/angular:module
+@schematics/angular:service
+@schematics/angular:pipe
+@schematics/angular:class
+projects: Configuration options for each project in the workspace.
+
+root (string): Root of the project files.
+sourceRoot (string): The root of the source files, assets and index.html file structure..
+projectType (string): the type of this project, application or library.
+prefix (string): The prefix to apply to generated selectors.
+schematics (object): Project configuration options for Schematics. Has the same format as top level Schematics configuration).
+architect (string): Project configuration for Architect targets.
+targetName (string): Name of this target.
+builder (string): Builder for this target, in the format package-name:builder-name.
+options (string): Options for this builder. JSON Schema for default schematics:
+@angular-devkit/build-angular:app-shell
+@angular-devkit/build-angular:browser
+@angular-devkit/build-angular:dev-server
+@angular-devkit/build-angular:extract-i18n
+@angular-devkit/build-angular:karma
+@angular-devkit/build-angular:protractor
+@angular-devkit/build-angular:server
+@angular-devkit/build-angular:tslint
+configurations (object): A map of alternative target options.
+configurationName (object): Partial options override for this builder.
+
+
+
+-- reference link 
+https://github.com/angular/angular-cli/wiki
